@@ -1,80 +1,73 @@
 *,
-*::before,
-*::after {
+*::after,
+::before {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
+body {
+  display: flex;
+  min-width: 800px;
+  height: inherit;
+  position: relative;
 }
 
+html,
 body {
   height: 100%;
-  min-width: 800px;
-  padding-top: 60px;
 }
 
-.page {
-  font-family: 'Raleway', sans-serif;
-  height: 100%;
-  margin: 0;
-  position: relative;
-  display: flex;
-  background-color: #fec7ee;
+.page-title::after {
+  content: "";
+  z-index: 2;
+  cursor: pointer;
 }
 
-.page-video {
-  position: absolute;
-  inset:0;
+.page-title {
+  text-align: center;
+  z-index: 1;
+  align-content: flex-start;
+  margin: 0 auto;
+  font-family: raleway;
+  width: 730px;
+  height: 408px;
+  font-size: 116px;
+}
+
+video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.page-title {
-  z-index: 1;
-  max-width: 739px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 116px;
-  letter-spacing: 4.06px;
-  text-transform: uppercase;
-}
-
-.page::before {
-  content: '';
+  z-index: 0;
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-color: rgb(255 255 255 / 0.3);
-}
-
-.page-title::after {
-  content: '*'
 }
 
 .page-title:hover {
   color: #4c4c4c;
-  cursor: pointer;
+}
+
+.page-title:hover + video {
+  background: #ffffff;
+  opacity: 0.7;
 }
 
 .page-title:hover::before {
-  content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
+  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
   position: absolute;
-  top: 180px;
-  right: 20px;
-  max-width: 742px;
+  text-transform: uppercase;
+  font-weight: 2000;
+  border: 1px;
   border-radius: 20px;
-  border: 2px solid #000;
-  box-shadow: 0 12px 0 #000;
-  padding: 36px 44px;
-  background: #FFF;
-  font-size: 35px;
-  font-weight: normal;
-  letter-spacing: normal;
-  line-height: 35px;
-  text-align: left;
-  text-transform: initial;
-  white-space: pre;
+  box-shadow: black 0 6px;
+  background-color: white;
+  width: 48%;
+  height: 10%;
+  font-size: 0.2em;
+  padding: 1.5%;
+  color: black;
+  top: 20%;
+  left: 50%;
+  z-index: 1;
 }
