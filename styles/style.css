@@ -19,7 +19,7 @@ body {
 }
 
 .page-title::after {
-  content: "";
+  content: "*";
   z-index: 2;
   cursor: pointer;
 }
@@ -50,24 +50,24 @@ video {
 
 .page-title:hover + video {
   background: #ffffff;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .page-title:hover::before {
-  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
+  content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
   position: absolute;
-  text-transform: uppercase;
-  font-weight: 2000;
-  border: 1px;
+  top: 180px;
+  max-width: 742px;
   border-radius: 20px;
-  box-shadow: black 0 6px;
-  background-color: white;
-  width: 48%;
-  height: 10%;
-  font-size: 0.2em;
-  padding: 1.5%;
-  color: black;
-  top: 20%;
-  left: 50%;
-  z-index: 1;
+  border: 2px solid #000;
+  box-shadow: 0 12px 0 #000;
+  padding: 36px 44px;
+  background: #FFF;
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 35px;
+  text-align: left;
+  text-transform: initial;
+  white-space: pre;
 }
